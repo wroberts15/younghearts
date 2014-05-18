@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Younghearts</title>
+  <title>Young Hearts</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body class='<%= controller.controller_name %>'>
-
-<%= yield %>
-
+    <div id="banner">
+      <h4>Young Hearts</h4>
+    </div>
+    <div id="rows">
+      <div id="top">
+        <ul>
+          <li><%= link_to 'Home', home_path, {:class => 'li_main_class'} %></li>
+          <li><%= link_to 'Events', events_path, {:class => 'li_main_class'} %></li>
+        </ul>
+      </div>
+      <div id="main">
+        <%= yield %>
+      </div>
+    </div>
 </body>
 </html>
