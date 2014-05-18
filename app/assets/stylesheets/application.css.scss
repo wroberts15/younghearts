@@ -10,14 +10,15 @@
  *
  *= require_self
  *= require_tree .
+ *= require bootstrap_and_overrides
  */
 
 #banner{
-    background: #9c9;
+    background: #A80000;
     padding: 10px;
     border-bottom: 2px solid;
     font: small-caps 40px/40px "Times New Roman", serif;
-    color: #282;
+    color: whitesmoke;
     text-align: center;
 
     img {
@@ -35,7 +36,7 @@
 }
 
 #rows {
-  background: #141;
+  background: white;
 
   #main{
     padding: 1em;
@@ -45,7 +46,7 @@
   #top{
     float: top;
     padding: 1em 2em;
-    height: 3em;
+    height: 2em;
     background: #141;
 
     ul{

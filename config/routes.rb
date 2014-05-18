@@ -1,4 +1,5 @@
 Younghearts::Application.routes.draw do
+  get "contact/index", as: 'contact/'
   get "home/index"
   resources :events
 
