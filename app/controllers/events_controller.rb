@@ -61,6 +61,10 @@ class EventsController < ApplicationController
     end
   end
 
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_url, :alert => exception.message
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event
