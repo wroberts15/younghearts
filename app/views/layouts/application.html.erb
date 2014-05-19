@@ -4,6 +4,8 @@
   <title>Young Hearts</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <script type="text/javascript" src="http://twitter.github.com/bootstrap/assests/js/bootstrap-dropdown.js">
+  </script>
   <%= csrf_meta_tags %>
 </head>
 <body class='<%= controller.controller_name %>'>
@@ -24,6 +26,16 @@
           <li><%= link_to 'Story', story_path, {:class => 'li_main_class'} %></li>
           <li><%= link_to 'Events', events_path, {:class => 'li_main_class'} %></li>
           <li><%= link_to 'Contact', contact_path, {:class => 'li_main_class'} %></li>
+          <% if admin_signed_in? %>
+            <li>
+              <%= link_to "Edit Admin", edit_admin_registration_path, {:class=>'li_main_class'} %>
+            </li>
+            <li class="li_main_class">
+              <%= link_to :logout, destroy_admin_session_path, :method => :delete %>
+            </li>
+          <% else %>
+          <% end %>
+
         </ul>
       </div>
       <div id="main">
