@@ -6,15 +6,19 @@
 
       <td class="list_description">
         <dl>
-          <dt><%= event.title %></dt>
+          <dt><%= link_to event.title, event  %></dt>
           <dd><%= truncate(strip_tags(event.description), length: 80) %></dd>
         </dl>
       </td>
 
       <td class="list_actions">
+      <% if admin_signed_in? %>
         <%= link_to 'Show', event %><br />
         <%= link_to 'Edit', edit_event_path(event) %><br />
         <%= link_to 'Destroy', event, method: :delete, data: { confirm: "Are you sure?"} %>
+      <% else %>
+          <%= link_to 'Show', event %><br />
+      <%end%>
       </td>
     </tr>
 

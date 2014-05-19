@@ -30,8 +30,8 @@
             <li>
               <%= link_to "Edit Admin", edit_admin_registration_path, {:class=>'li_main_class'} %>
             </li>
-            <li class="li_main_class">
-              <%= link_to :logout, destroy_admin_session_path, :method => :delete %>
+            <li>
+              <%= link_to "Logout", destroy_admin_session_path, {:method => :delete, :class=> 'li_main_class'} %>
             </li>
           <% else %>
           <% end %>
