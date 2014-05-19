@@ -2,10 +2,10 @@
     <p id="notice"><%= notice %></p>
 <% end %>
 
-<h1>Home</h1>
+<h3>Home</h3>
   <% @events.each do |event| %>
     <div class="entry">
-      <h3><%= event.title %></h3>
+      <h4><%= event.title %></h4>
       <%= sanitize(event.description) %>
     </div>
   <% end %>

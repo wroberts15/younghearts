@@ -14,15 +14,18 @@
  */
 
 #banner{
-    background: #A80000;
+    background: #A30000;
     padding: 10px;
     border-bottom: 2px solid;
     font: small-caps 40px/40px "Times New Roman", serif;
     color: whitesmoke;
-    text-align: center;
+    text-align: left;
+    height: 120px;
 
     img {
       float: left;
+      height: 100px;
+      width: 190px;
     }
 }
 
@@ -47,7 +50,7 @@
     float: top;
     padding: 1em 2em;
     height: 2em;
-    background: #141;
+    background: #A30000;
 
     ul{
       padding: 0;
@@ -56,9 +59,10 @@
       li{
         list-style: none;
         display: inline;
+        padding: 4em;
 
         .li_main_class{
-          color: #bfb;
+          color: #FFFF66;
           font-size: small;
           text-decoration: none;
         }
