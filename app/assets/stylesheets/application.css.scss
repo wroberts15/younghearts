@@ -60,12 +60,16 @@
         list-style: none;
         display: inline;
         padding: 4em;
+        color: ghostwhite;
+        font-size: small;
+        text-decoration: none;
 
-        .li_main_class{
+        a{
           color: #FFFF66;
           font-size: small;
           text-decoration: none;
         }
+
       }
 
       .admin_li{

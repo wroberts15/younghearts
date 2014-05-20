@@ -22,32 +22,25 @@
     <div id="rows">
       <div id="top">
         <ul>
-          <li><%= link_to 'Home', home_path, {:class => 'li_main_class'} %></li>
-          <li><%= link_to 'Story', story_path, {:class => 'li_main_class'} %></li>
-          <li><%= link_to 'Events', events_path, {:class => 'li_main_class'} %></li>
-          <li><%= link_to 'Contact', contact_path, {:class => 'li_main_class'} %></li>
+          <li> <%= link_to 'Home', home_path %> </li>
+          <li> <%= link_to 'Story', story_path %> </li>
+          <li> <%= link_to 'Events', events_path %> </li>
+          <li> <%= link_to 'Contact', contact_path %> </li>
+
           <% if user_signed_in? %>
-            <li class="li_main_class">
-              <%= current_user.email %>
-            </li>
             <li>
-              <%= link_to "Edit User", edit_user_registration_path, {:class=> 'li_main_class'} %>
-            </li>
-            <li>
-              <%= link_to "Logout", destroy_user_session_path, {:method => :delete, :class=> 'li_main_class'} %>
+              <%= current_user.email %>: <%= link_to "Edit User", edit_user_registration_path %> |
+              <%= link_to "Logout", destroy_user_session_path, {:method => :delete} %>
             </li>
           <% end %>
+
           <% if admin_signed_in? %>
-            <li class="li_main_class">
-              <%= current_admin.email %>
-            </li>
             <li>
-              <%= link_to "Edit Admin", edit_admin_registration_path, {:class=> 'li_main_class'} %>
-            </li>
-            <li>
-              <%= link_to "Logout", destroy_admin_session_path, {:method => :delete, :class=> 'li_main_class'} %>
+              <%= current_admin.email %>: <%= link_to "Edit Admin", edit_admin_registration_path %> |
+              <%= link_to "Logout", destroy_admin_session_path, {:method => :delete} %>
             </li>
           <% end %>
+
         </ul>
       </div>
       <div id="main">
