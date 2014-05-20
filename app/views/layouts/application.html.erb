@@ -26,16 +26,28 @@
           <li><%= link_to 'Story', story_path, {:class => 'li_main_class'} %></li>
           <li><%= link_to 'Events', events_path, {:class => 'li_main_class'} %></li>
           <li><%= link_to 'Contact', contact_path, {:class => 'li_main_class'} %></li>
-          <% if admin_signed_in? %>
+          <% if user_signed_in? %>
+            <li class="li_main_class">
+              <%= current_user.email %>
+            </li>
             <li>
-              <%= link_to "Edit Admin", edit_admin_registration_path, {:class=>'li_main_class'} %>
+              <%= link_to "Edit User", edit_user_registration_path, {:class=> 'li_main_class'} %>
+            </li>
+            <li>
+              <%= link_to "Logout", destroy_user_session_path, {:method => :delete, :class=> 'li_main_class'} %>
+            </li>
+          <% end %>
+          <% if admin_signed_in? %>
+            <li class="li_main_class">
+              <%= current_admin.email %>
+            </li>
+            <li>
+              <%= link_to "Edit Admin", edit_admin_registration_path, {:class=> 'li_main_class'} %>
             </li>
             <li>
               <%= link_to "Logout", destroy_admin_session_path, {:method => :delete, :class=> 'li_main_class'} %>
             </li>
-          <% else %>
           <% end %>
-
         </ul>
       </div>
       <div id="main">
